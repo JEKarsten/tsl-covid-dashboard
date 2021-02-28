@@ -1,10 +1,16 @@
 import csv
+import requests
 
+# Updates CSV file from L.A. Times repository
 dataPlacesURL = 'https://raw.githubusercontent.com/datadesk/california-coronavirus-data/master/latimes-place-totals.csv'
+r = requests.get(dataPlacesURL, allow_redirects=True)
+with open('latimes-place-totals.csv', 'wb') as urlCSV:
+    urlCSV.write(r.content)
 
+# Initializes list of Claremont cases
 claremontData = []
 
-with open('2-28-latimes-place-totals.csv', newline = '') as dataPlacesCSV:
+with open('latimes-place-totals.csv', newline = '') as dataPlacesCSV:
     # Initializes reader
     placesReader = csv.reader(dataPlacesCSV, delimiter = ',')
 
