@@ -19,14 +19,14 @@ jobs:
       - name: Setup Python environment
         uses: actions/setup-python@v2
         with: 
-          python-version: 3.7
+          python-version: 3.9.2
 
       #- name: Install requirements
       #  run: pip install -r requirements.txt
 
       - name: Execute CSV reader script
         run: |
-        python3 csvReader.py
+        python3 /csvReader.py
       
       - name: Set up git config
         run: |
