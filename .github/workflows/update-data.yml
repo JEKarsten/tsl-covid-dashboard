@@ -5,13 +5,13 @@ on:
     branches:
       - master
 
-  #schedule:
-    # runs on the first minute of every hour (TEST: EVERY 5TH MIN)
-    #-cron: '*/5 * * * *'
+  schedule:
+    -cron: '*/5 * * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps: 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,4 +25,15 @@ jobs:
       #  run: pip install -r requirements.txt
 
       - name: Execute CSV reader script
-        run: python3 csvReader.py
+        run: |
+        python3 csvReader.py
+      
+      - name: Set up git config
+        run: |
+          git config user.name ${{ secrets.USERNAME }}
+          git config user.email ${{ secrets.EMAIL }}
+
+      - name: Commit changes
+        run: |
+          chmod +x ./scripts/commit.sh
+          ./scripts/commit.sh
