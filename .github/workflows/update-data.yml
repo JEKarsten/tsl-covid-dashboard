@@ -16,17 +16,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Python environment
+      - name: Set up Python environment
         uses: actions/setup-python@v2
         with: 
           python-version: 3.9.2
 
       - name: Install requirements
-        run: pip install -r requirements.txt
+        run: pip install -r ./requirements.txt
 
-      - name: Execute CSV reader script
+      - name: Execute data constructor Python script
         run: |
-          python csvReader.py
+          python scripts/data_construcor.py
         
       - name: Set up git config
         run: |
@@ -35,5 +35,5 @@ jobs:
 
       - name: Commit changes
         run: |
-          chmod +x ./scripts/commit.sh
-          ./scripts/commit.sh
+          chmod +x scripts/commit.sh
+          scripts/commit.sh
