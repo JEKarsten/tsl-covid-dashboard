@@ -5,9 +5,9 @@ on:
     branches:
       - master
 
-  schedule:
+  #schedule:
     # runs on the first minute of every hour (TEST: EVERY 5TH MIN)
-    -cron: '*/5 * * * *'
+    #-cron: '*/5 * * * *'
 
 jobs:
   build:
