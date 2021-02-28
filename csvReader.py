@@ -1,9 +1,10 @@
 import csv
 import requests
+import datetime
 
 # Updates CSV file from L.A. Times repository
 dataPlacesURL = 'https://raw.githubusercontent.com/datadesk/california-coronavirus-data/master/latimes-place-totals.csv'
-r = requests.get(dataPlacesURL, allow_redirects=True)
+r = requests.get(dataPlacesURL, allow_redirects = True)
 with open('latimes-place-totals.csv', 'wb') as urlCSV:
     urlCSV.write(r.content)
 
@@ -29,9 +30,9 @@ with open('latimes-place-totals.csv', newline = '') as dataPlacesCSV:
 claremontData.reverse()
 
 # Overwrites (or creates) Claremont cases CSV file through a list
-with open('claremont-cases.csv', 'w', newline='') as dataClaremontCSV:
+with open('claremont-cases.csv', 'w', newline = '') as dataClaremontCSV:
     # Initializes writer and writes header row
-    claremontWriter = csv.writer(dataClaremontCSV, delimiter=',')
+    claremontWriter = csv.writer(dataClaremontCSV, delimiter = ',')
     claremontWriter.writerow(['date', 'cases', 'new_cases', 'cases_per_10k', 'cases_last_14_days', 'avg_cases_last_14_days', 'population'])
 
     # Initializes calculation variables
@@ -56,4 +57,6 @@ with open('claremont-cases.csv', 'w', newline='') as dataClaremontCSV:
         
         # Sets previous day cases variable
         previousDayCases = claremontData[i][1]
-        
+
+with open('test.txt', 'w', newline = '') as test:
+    test.write(str(datetime.datetime.now()))

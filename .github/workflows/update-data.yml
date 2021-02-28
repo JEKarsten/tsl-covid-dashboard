@@ -1,0 +1,16 @@
+name: Update data
+
+on:
+  schedule:
+    # runs on the first minute of every hour (TEST: EVERY 5TH MIN)
+    -cron: '*/5 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with: 
+          python-version: '3.x'
+      - run: python3 csvReader.py
