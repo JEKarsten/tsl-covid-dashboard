@@ -23,4 +23,14 @@ jobs:
 
       - name: Execute CSV reader script
         run: |
-        python csvReader.py
+          python csvReader.py
+        
+      - name: Set up git config
+        run: |
+          git config user.name ${{ secrets.USERNAME }}
+          git config user.email ${{ secrets.EMAIL }}
+
+      - name: Commit changes
+        run: |
+          chmod +x ./scripts/commit.sh
+          ./scripts/commit.sh
