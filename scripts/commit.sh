@@ -2,4 +2,4 @@
 
 git add . 
 git commit -m "Automated repo update"
-git push origin master
+git push origin main
