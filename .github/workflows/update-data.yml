@@ -1,6 +1,10 @@
 name: Update data
 
 on:
+  push:
+    branches:
+      - master
+
   schedule:
     # runs on the first minute of every hour (TEST: EVERY 5TH MIN)
     -cron: '*/5 * * * *'
@@ -9,8 +13,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v2
         with: 
-          python-version: '3.x'
-      - run: python3 csvReader.py
+          python-version: 3.7
+
+      #- name: Install requirements
+      #  run: pip install -r requirements.txt
+
+      - name: Execute CSV reader script
+        run: python3 csvReader.py
