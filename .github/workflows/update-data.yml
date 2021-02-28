@@ -26,7 +26,7 @@ jobs:
 
       - name: Execute CSV reader script
         run: |
-        python3 /csvReader.py
+        python csvReader.py
       
       - name: Set up git config
         run: |
