@@ -62,5 +62,5 @@ with open(os.path.join(ROOT_DIR, 'data/claremont-cases.csv'), 'w', newline = '')
         # Sets previous day cases variable
         previousDayCases = claremontData[i][1]
 
-with open(os.path.join(ROOT_DIR,'test.txt'), 'w', newline = '') as test:
-    test.write(str(datetime.datetime.now()))
+with open(os.path.join(ROOT_DIR,'timestamp-log.txt'), 'a', newline = '') as test:
+    test.write('\n' + str(datetime.datetime.now()))

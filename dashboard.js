@@ -11,9 +11,9 @@ var CURRENT_CHART;
 
 
 $.ajax({
-    type: "GET",
-    url: "https://raw.githubusercontent.com/JEKarsten/tsl-covid-dashboard/main/data/claremont-cases.csv",
-    dataType: "text",
+    type: 'GET',
+    url: 'https://raw.githubusercontent.com/JEKarsten/tsl-covid-dashboard/main/data/claremont-cases.csv',
+    dataType: 'text',
     success: function(data) {processData(data);}
 });
 
@@ -49,19 +49,6 @@ document.getElementById('all-time').addEventListener('click', function() {
     document.getElementById('chart-month').style.visibility = 'hidden';
     document.getElementById('chart-all-time').style.visibility = 'visible';
 });
-
-/* 
-document.getElementById("month").addEventListener("click", function() {
-    CURRENT_CHART.destroy()
-    var size = DATA_ARRAY.length
-    makeChart('chartCases', DATA_ARRAY.slice(size-31, size), 'day');
-});
-
-document.getElementById("all-time").addEventListener("click", function() {
-    CURRENT_CHART.destroy()
-    makeChart('chartCases', DATA_ARRAY, 'month');
-});
- */
 
 
 
