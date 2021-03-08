@@ -72,7 +72,7 @@ function processData(text) {
     var allRows = text.split(/\r\n|\n/);
     var headers = allRows[0].split(',');
 
-    for (var i = 1; i < allRows.length; i++) {
+    for (let i = 1; i < allRows.length; i++) {
         var row = allRows[i].split(',');
         if (row.length == headers.length) {
 
@@ -90,9 +90,6 @@ function processData(text) {
                 CASES_NEW_30_DAYS.push(currentCasesNew);
                 CASES_14_AVG_30_DAYS.push(parseInt(row[5]));
             }
-
-
-
         }
     }
 
@@ -192,7 +189,7 @@ function makeChart(timeUnit, dates, casesTotal, casesNew, cases14Avg) {
                     }
                 }]
             },
-            tooltips: { 
+            tooltips: {
                 position: 'nearest',
                 displayColors: false,
                 callbacks: {
