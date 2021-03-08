@@ -8,9 +8,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js'></script>
 
-  <!-- Imports d3 module to read csv data -->
-  <script src='https://d3js.org/d3.v6.min.js'></script>
-
   <link rel='stylesheet' href='dashboard.css' />
 </head>
 
@@ -18,10 +15,11 @@
   <button id='month' type='button' >Overall (Monthly)</button>
   <button id='all-time' type='button' >Overall (Cumulative)</button>
 
-  <div class='chart-container'>
+  
+  <div class='chart-container' id='chart-container-month'>
     <canvas id='chart-month' style='visibility: visible;'></canvas>
   </div>
-  <div class='chart-container'>
+  <div class='chart-container' id='chart-container-all-time'>
     <canvas id='chart-all-time' style='visibility: hidden;'></canvas>
   </div>
 </body>

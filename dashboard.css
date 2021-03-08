@@ -1,5 +1,18 @@
 .chart-container {
-    position: absolute;
+    /* display: inline-block; */
+    position: relative;
     height: 50vh;
     width: 100%;
+}
+
+#chart-container-month {
+    z-index: 0;
+}
+
+#chart-container-all-time {
+    z-index: 1;
+}
+
+.containers {
+    position: relative;
 }
