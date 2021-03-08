@@ -99,7 +99,7 @@ function processData(text) {
 
 /**
  * Uses Chart.js to create a line chart displaying the number of COVID-19 cases in Claremont;
- * attaches this to an HTML canvas with the 'cases-chart' id;
+ * attaches this to an HTML canvas with the 'covid-cases-chart' id;
  * stores this in the global CHART variable for later modification
  * @param {String} timeUnit The unit of time that will be used on the x-axis
  * @param {String[]} dates An array of dates that span the data
@@ -111,7 +111,7 @@ function makeChart(timeUnit, dates, casesTotal, casesNew, cases14Avg) {
     console.log(dates)
     console.log(casesNew)
     console.log(cases14Avg)
-    CHART = new Chart('cases-chart', {
+    CHART = new Chart('covid-cases-chart', {
         type: 'line',
         data: {
             labels: dates,
